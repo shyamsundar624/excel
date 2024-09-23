@@ -1,0 +1,20 @@
+package com.excel.shyam.service;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Service;
+
+import com.excel.shyam.entity.Course;
+import com.excel.shyam.repo.CourseRepository;
+
+@Service
+public class CourseService {
+
+	private CourseRepository repository;
+	
+	public void generateExcel(HttpServletResponse response) {
+		List<Course> courses = repository.findAll();
+	}
+}

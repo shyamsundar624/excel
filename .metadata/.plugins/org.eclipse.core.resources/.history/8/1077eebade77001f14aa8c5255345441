@@ -1,0 +1,27 @@
+package com.excel.shyam.service;
+
+import java.io.ByteArrayInputStream;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.excel.shyam.StudentRepository;
+import com.excel.shyam.entity.Student;
+
+public class StudentService implements IStudentService{
+
+	@Autowired
+	private StudentRepository studentRepository;
+	
+	@Override
+	public Student saveStudent(Student student) {
+		// TODO Auto-generated method stub
+		return studentRepository.save(student);
+	}
+
+	@Override
+	public ByteArrayInputStream exportStudentData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

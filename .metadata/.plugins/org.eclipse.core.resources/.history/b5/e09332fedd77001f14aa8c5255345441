@@ -1,0 +1,10 @@
+package com.excel.shyam.service;
+
+import com.excel.shyam.entity.Student;
+
+public interface IStudentService {
+
+	public Student saveStudent(Student student);
+	
+	
+}

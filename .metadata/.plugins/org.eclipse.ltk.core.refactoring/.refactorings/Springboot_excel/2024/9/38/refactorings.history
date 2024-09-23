@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Student.java&apos; to &apos;Springboot_excel/src/main/java/com.excel.shyam.entity&apos;&#x0D;&#x0A;- Original project: &apos;Springboot_excel&apos;&#x0D;&#x0A;- Destination element: &apos;Springboot_excel/src/main/java/com.excel.shyam.entity&apos;&#x0D;&#x0A;- Original element: &apos;com.excel.shyam.Student.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.excel.shyam.entity" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.excel.shyam{Student.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1726897861768" units="1" version="1.0"/>
+</session>
