@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,13 +28,17 @@ public class StudentController {
 	return ResponseEntity.status(HttpStatus.CREATED).body(studentService.saveStudent(student));
 	}
 	
+	@GetMapping("/export")
 	public ResponseEntity<byte[]> exportStudentData() throws IOException{
 		ByteArrayInputStream inputStream = studentService.exportStudentData();
 		
 		String headerKey="Content-Disposition";
-		String headerValue="attachment: filename=student.xlsx";
+		String headerValue="attachment; filename=student.xlsx";
 		HttpHeaders headers=new HttpHeaders();
 		headers.add(headerKey, headerValue);
 		
 		return ResponseEntity.ok().headers(headers).
-				contentType(MediaType.
+				contentType(MediaType.APPLICATION_OCTET_STREAM).
+				body(inputStream.readAllBytes());
+	}
+}
