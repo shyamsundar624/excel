@@ -1,11 +1,15 @@
 package com.excel.shyam.service;
 
+import java.awt.Color;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -34,13 +38,21 @@ public class StudentService implements IStudentService {
 		XSSFWorkbook workbook = new XSSFWorkbook();
 		XSSFSheet sheet = workbook.createSheet("Student");
 
+		
+		XSSFCellStyle cellStyle = workbook.createCellStyle();
+		XSSFColor color = new XSSFColor(new Color(204,255,204),null);
+		cellStyle.setFillForegroundColor(color);
+		cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+		
 		XSSFRow headRow = sheet.createRow(0);
-		XSSFCell cell = headRow.createCell(0);
-		cell.setCellValue("Id");
-		headRow.createCell(1).setCellValue("Name");
-		headRow.createCell(2).setCellValue("Branch");
-		headRow.createCell(3).setCellValue("College");
-		headRow.createCell(4).setCellValue("Fees");
+		String[] headerArr= {"Id","Name","Branch","College","Fees"};
+	   int	headerCellIndex=0;
+		for(String header:headerArr) {
+		XSSFCell cell = headRow.createCell(headerCellIndex);
+		cell.setCellValue(header);
+		cell.setCellStyle(cellStyle);
+		headerCellIndex++;
+		}
 		int rowIndex=1;
 		for(Student s:all) {
 			XSSFRow row = sheet.createRow(rowIndex);
