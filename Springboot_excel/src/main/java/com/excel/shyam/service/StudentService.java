@@ -10,6 +10,7 @@ import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFDataFormat;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -53,6 +54,10 @@ public class StudentService implements IStudentService {
 		cell.setCellStyle(cellStyle);
 		headerCellIndex++;
 		}
+		XSSFCellStyle decimalStyle = workbook.createCellStyle();
+		XSSFDataFormat format = workbook.createDataFormat();
+		decimalStyle.setDataFormat(format.getFormat("0.00"));
+		
 		int rowIndex=1;
 		for(Student s:all) {
 			XSSFRow row = sheet.createRow(rowIndex);
@@ -60,8 +65,10 @@ public class StudentService implements IStudentService {
 			row.createCell(1).setCellValue(s.getName());
 			row.createCell(2).setCellValue(s.getBranch());
 			row.createCell(3).setCellValue(s.getCollege());
-			row.createCell(4).setCellValue(s.getFees());
+			 XSSFCell  feesCell= row.createCell(4);
 			
+			feesCell.setCellValue(s.getFees());
+			feesCell.setCellStyle(decimalStyle);
 			rowIndex++;
 		}
 		workbook.write(out);

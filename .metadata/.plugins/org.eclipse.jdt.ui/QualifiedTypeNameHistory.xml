@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="com.excel.shyam.entity.Invoice"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
     <fullyQualifiedTypeName name="javax.persistence.Table"/>
@@ -15,9 +13,7 @@
     <fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFCell"/>
     <fullyQualifiedTypeName name="java.text.NumberFormat.Style"/>
     <fullyQualifiedTypeName name="org.apache.poi.hssf.util.HSSFColor"/>
-    <fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFColor"/>
     <fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.IndexedColors"/>
-    <fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.FillPatternType"/>
     <fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.HorizontalAlignment"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
@@ -60,4 +56,8 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpHeaders"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+    <fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFColor"/>
+    <fullyQualifiedTypeName name="org.apache.poi.hssf.record.cf.ColorGradientFormatting"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.FillPatternType"/>
 </qualifiedTypeNameHistroy>
